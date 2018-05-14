@@ -29,4 +29,6 @@ Remove these chloroplast_genomes and mitochondria_genomes to a new folder.
 mkdir -p ~/data/organelle/common/genomes
 cd ~/data/organelle/common/genomes
 
-
+perl ~/Scripts/FindCommon_NCBI/get_mit_chl.pl \
+../common_chl.csv \
+../common_mit.csv
