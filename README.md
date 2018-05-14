@@ -19,7 +19,7 @@ perl ~/Scripts/FindCommon_NCBI/find_common.pl \
 > common_mit.csv
 
 #55
-cat common.csv | grep -v "^#" | wc -l
+cat common_chl.csv | grep -v "^#" | wc -l
 
 ```
 
