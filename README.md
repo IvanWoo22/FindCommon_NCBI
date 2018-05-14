@@ -11,7 +11,12 @@ cd ~/data/organelle/common
 perl ~/Scripts/FindCommon_NCBI/find_common.pl \
 ~/data/organelle/plastid/GENOMES \
 ~/data/organelle/mito/GENOMES  \
-> common_sp.csv
+> common_chl.csv
+
+perl ~/Scripts/FindCommon_NCBI/find_common.pl \
+~/data/organelle/mito/GENOMES \
+~/data/organelle/plastid/GENOMES \
+> common_mit.csv
 
 #55
 cat common.csv | grep -v "^#" | wc -l
