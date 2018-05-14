@@ -11,12 +11,8 @@ cd ~/data/organelle/common
 perl ~/Scripts/FindCommon_NCBI/find_common.pl \
 ~/data/organelle/plastid/GENOMES \
 ~/data/organelle/mito/GENOMES  \
-> common_chl.csv
+> common_sp.csv
 
-perl ~/Scripts/FindCommon_NCBI/find_common.pl \
-~/data/organelle/mito/GENOMES \
-~/data/organelle/plastid/GENOMES \
-> common_mit.csv
 
 #55
 cat common_chl.csv | grep -v "^#" | wc -l
@@ -29,6 +25,4 @@ Remove these chloroplast_genomes and mitochondria_genomes to a new folder.
 mkdir -p ~/data/organelle/common/genomes
 cd ~/data/organelle/common/genomes
 
-perl ~/Scripts/FindCommon_NCBI/get_mit_chl.pl \
-../common_chl.csv \
-../common_mit.csv
+perl ~/Scripts/FindCommon_NCBI/get_mit_chl.pl ../common_sp.csv
