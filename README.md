@@ -15,7 +15,7 @@ perl ~/Scripts/FindCommon_NCBI/find_common.pl \
 
 
 #55
-cat common_chl.csv | grep -v "^#" | wc -l
+cat common_sp.csv | grep -v "^#" | wc -l
 
 ```
 
