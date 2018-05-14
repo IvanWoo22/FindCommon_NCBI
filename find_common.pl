@@ -22,19 +22,19 @@ $mit_content = `find . -mindepth 1 -maxdepth 1 -type d `;
 @chl_name = split /\n/, $chl_content;
 
 
-foreach my $i (0..$#mit_name){
+for my $i (0..$#mit_name){
 	$mit_cname[$i] = $1 if $mit_name[$i] =~ m/\A\.\/(\w+)/;
 	$mit_cname[$i] =~ s/([a-zA-Z])([a-zA-Z])[a-zA-Z]+_(\w+)/$1$2_$3/ if ( $mit_name[$i] =~ m/_/ );
 		
 }
 
 
-foreach my $i (0..$#chl_name){
+for my $i (0..$#chl_name){
 	$chl_cname[$i] = $1 if $chl_name[$i] =~ m/\A\.\/(\w+)/;
 	$chl_cname[$i] =~ s/([a-zA-Z])([a-zA-Z])[a-zA-Z]+_(\w+)/$1$2_$3/ if ( $chl_cname[$i] =~ m/_/ );
 		
-	foreach my $mit (sort @mit_cname){
-		print "$chl_name[$i]\n" if $mit eq $chl_cname[$i];
+	for my $j (0..$#mit_cname){
+		print "$chl_name[$i],$mit_name[$j]\n" if $mit_cname[$j] eq $chl_cname[$i];
 	}
 }
 
