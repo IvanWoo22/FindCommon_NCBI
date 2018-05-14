@@ -9,7 +9,7 @@ cd ~/data/organelle/common
 
 #We need to know where are the chloroplast_genomes and mitochondria_genomes.
 perl ~/Scripts/FindCommon_NCBI/find_common.pl \
-~/data/organelle/plastid_genomes \
+~/data/organelle/plastid/GENOMES \
 ~/data/organelle/mito/GENOMES  \
 > common_sp.csv
 
