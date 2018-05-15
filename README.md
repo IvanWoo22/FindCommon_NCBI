@@ -64,3 +64,35 @@ perl ~/Scripts/FindCommon_NCBI/ABBR_to_genus.pl \
 ~/home/ivan/data/organelle/plastid/summary/chloroplastid.ABBR.csv
 ```
 
+
+Self-alignments
+```bash
+mkdir -p ~/data/organelle/common/self
+cd ~/data/organelle/common/genus
+
+perl ~/Scripts/FindCommon_NCBI/egaz_circos.pl
+
+cd ~/data/organelle/common/self
+for d in `find . -mindepth 1 -maxdepth 1 -type d | sort `;do
+    echo "echo \"====> Processing ${d} <====\""
+    echo bash ${d}/1_self.sh;
+    echo bash ${d}/3_proc.sh;
+    echo bash ${d}/4_circos.sh;
+    echo bash ${d}/6_chr_length.sh;
+    echo bash ${d}/7_self_aligndb.sh;
+    echo ;
+done  > runall.sh
+
+sh runall.sh 2>&1 | tee log_runall.txt
+
+# clean
+find . -mindepth 1 -maxdepth 2 -type d -name "*_raw" | parallel -r rm -fr
+find . -mindepth 1 -maxdepth 2 -type d -name "*_fasta" | parallel -r rm -fr
+
+
+
+
+
+
+
+
