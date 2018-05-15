@@ -29,3 +29,7 @@ while (<FI>){
 	}
 
 }
+
+
+close FI;
+close SI;
