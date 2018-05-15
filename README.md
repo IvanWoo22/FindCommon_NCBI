@@ -61,7 +61,7 @@ cd ~/data/organelle/common/genus
 #Here we choose chloroplastid.ABBR.csv as a reference.
 perl ~/Scripts/FindCommon_NCBI/ABBR_to_genus.pl \
 ~/data/organelle/common/common_sp.csv \
-~/home/ivan/data/organelle/plastid/summary/chloroplastid.ABBR.csv
+~/data/organelle/plastid/summary/chloroplastid.ABBR.csv
 ```
 
 
