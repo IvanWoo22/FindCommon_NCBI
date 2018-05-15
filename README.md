@@ -7,14 +7,14 @@ mkdir -p ~/data/organelle/common
 cd ~/data/organelle/common
 
 
-#We need to know where are the chloroplast_genomes and mitochondria_genomes.
+#We need to know where are the chloroplast_genomes and mitochondria_genomes. Here their inputing order is significant.  
 perl ~/Scripts/FindCommon_NCBI/find_common.pl \
 ~/data/organelle/plastid/GENOMES \
 ~/data/organelle/mito/GENOMES  \
 > common_sp.csv
 
 
-#55
+#55. The output file contents both abbreviations of a specie's chloroplast and mitochondria.
 cat common_sp.csv | grep -v "^#" | wc -l
 
 ```
