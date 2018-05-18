@@ -10,7 +10,7 @@ cd ~/data/organelle/common
 #We need to know where are the chloroplast_genomes and mitochondria_genomes. Here their inputing order is significant.
 #If you do with withncbi/taxon, please change "~/data/organelle/plastid/GENOMES" to "~/data/organelle/plastid_genomes"
 perl ~/Scripts/FindCommon_NCBI/find_common.pl \
-~/data/organelle/plastid/GENOMES \   
+~/data/organelle/plastid/GENOMES \
 ~/data/organelle/mito/GENOMES  \
 > common_sp.csv
 
